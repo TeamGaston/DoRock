@@ -8,7 +8,6 @@
 .logoArea {
     width: 20%;
     height: 100%;
-
     text-align: center;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQy50mDfXXynHwnP8Wj4RFQWI3Pa0SEl1PCg&s");
     background-repeat: no-repeat;
@@ -23,13 +22,14 @@
 
 .menuElement {
     width: 100%;
-    height: 100%;
+    height: 50%;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     list-style-type: none;
     text-align: center;
-
-    line-height: 9rem;
+    line-height: 4.5rem;
+    margin-top: 3rem;
 }
 
 .linkStyle {
@@ -38,8 +38,8 @@
     color: #333333;
     font-size: 2rem;
     font-weight: 400;
-
     display: inline-block;
+    /* border: 1px solid red; */
 }
 
 .linkStyle:after {
