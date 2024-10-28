@@ -15,7 +15,7 @@
     /* border: 1px solid rgb(255, 174, 0); */
     text-align: center;
     width: 35%;
-    margin-top: 23rem;
+    margin-top: 30rem;
 }
 
 .title {
@@ -31,10 +31,10 @@
 .aiInput {
     text-indent: 1rem;
     width: 90%;
-    padding: 12px 0;
+    padding: 1.2rem 0;
     border-radius: 1.3rem;
     border: 2px solid #00d1ff;
-    color: #fff;
+    color: #333;
     font-size: 1.3rem;
     outline: none;
     transition: all 0.3s ease-in-out;
@@ -53,7 +53,6 @@
     box-shadow: 0 0 1rem rgba(0, 94, 255, 0.8);
 }
 
-
 h1 {
     font-size: 2.5rem;
     font-weight: bold;
@@ -63,7 +62,7 @@ h1 {
 
 .detailsLink {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 2rem;
     text-decoration: none;
     color: #333;
     border-bottom: 0.1rem solid #333;
@@ -95,4 +94,31 @@ h1 {
     font-size: 1.8rem;
     cursor: pointer;
     padding: 0.5rem;
+}
+
+/* slideArea */
+.slideArea{
+    position: absolute;
+    width: 48%;
+    height: 52%;
+    background: gold;
+    right: 0;
+    top: 43%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    overflow: hidden;
+}
+
+.sliderBox{
+    display: inline-block;
+    width: 70rem;
+    height: 100%;
+}
+
+.slideImg{
+    width: 100%;
+    height: 100%;
 }
