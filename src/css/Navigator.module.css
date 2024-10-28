@@ -8,13 +8,13 @@
 .logoArea {
     width: 20%;
     height: 100%;
-    background-color: yellow;
+
+    text-align: center;
 }
 
 .navBar {
-    width: 50%;
+    width: 40%;
     height: 100%;
-    background-color: indianred;
 }
 
 .menuElement {
@@ -22,19 +22,22 @@
     height: 100%;
     display: flex;
     justify-content: space-evenly;
-    font-size: 3rem;
     list-style-type: none;
     text-align: center;
 
-    text-decoration: none;
+    line-height: 9rem;
 }
 
-.menuElement li {
-    text-decoration: none;
+.linkStyle {
+    text-decoration-line: none;
+    -moz-text-decoration-line: none;
+    color: #333333;
+    font-size: 2rem;
+    font-weight: 400;
 }
 
 .buttonArea {
     width: 20%;
     height: 100%;
-    background-color: aqua;
+    text-align: center;
 }

@@ -10,13 +10,13 @@ function Navigator() {
             <nav className={styles.navBar}>
                 <ul className={styles.menuElement}>
                     <li>
-                        <Link to="/">홈</Link> 
+                        <Link to="/" className={styles.linkStyle}>홈</Link> 
                     </li>
                     <li>
-                        <Link to="/tripInfo">여행 정보</Link>
+                        <Link to="/tripInfo" className={styles.linkStyle}>여행정보</Link>
                     </li>
                     <li>
-                    <Link to="/aiPlanner">AI</Link>
+                    <Link to="/aiPlanner" className={styles.linkStyle}>AI</Link>
                     </li>
                 </ul>
                 
