@@ -6,7 +6,7 @@ function Navigator() {
     return (
         <>
         <div className={styles.navigator}>
-            <section className={styles.logoArea}>강원도락도락</section>
+            <section className={styles.logoArea}></section>
             <nav className={styles.navBar}>
                 <ul className={styles.menuElement}>
                     <li>
