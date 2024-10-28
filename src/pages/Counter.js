@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function GangwonMap() {
     const [hovoredRegion, setRegion] = useState(null);
+    const navigate = useNavigate();
 
     const sigunguCode = {
         "강릉": 1, "고성": 2, "동해": 3, "삼척": 4, "속초": 5, "양구": 6,
@@ -29,7 +31,7 @@ function GangwonMap() {
     }
 
     const onMapClick = (region) => {
-        document.location.href = `/info/${region}`; // /info/:areaCode
+        navigate(`/info/${region}`);
     }
 
     return (
