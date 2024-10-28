@@ -1,0 +1,40 @@
+.navigator {
+    display: flex;
+    width: 100%;
+    height: 8rem;
+    justify-content: space-between;
+}
+
+.logoArea {
+    width: 20%;
+    height: 100%;
+    background-color: yellow;
+}
+
+.navBar {
+    width: 50%;
+    height: 100%;
+    background-color: indianred;
+}
+
+.menuElement {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 3rem;
+    list-style-type: none;
+    text-align: center;
+
+    text-decoration: none;
+}
+
+.menuElement li {
+    text-decoration: none;
+}
+
+.buttonArea {
+    width: 20%;
+    height: 100%;
+    background-color: aqua;
+}

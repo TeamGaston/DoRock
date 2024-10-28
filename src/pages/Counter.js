@@ -18,7 +18,7 @@ function GangwonMap() {
     }
 
     const svgStyle = (region) => ({
-        fill: hovoredRegion === region ? "#000000" : "#ffffff",
+        fill: hovoredRegion === region ? "#87CEEB" : "#ffffff",
         stroke: "#1D1D1F",
         strokeWidth: 1.5,
         transition: ".3s",
@@ -35,7 +35,7 @@ function GangwonMap() {
     return (
         <div style={{background: "linear-gradient(135deg, #87CEEB, #90EE90)", 
             width: "100vw", height: "50rem", position: "relative"}}>
-            <h1 style={{position: "absolute", fontSize: "5rem", top: "0"}}>여행하면 강원도</h1>
+            <h1 style={{position: "absolute", fontSize: "5rem", top: "0", height: "5rem"}}>여행하면 강원도</h1>
             <div style={{ width: "94rem", height: "50rem", position: "absolute", 
                 background: "white", top: "20vh", left: `calc( 50% - 47rem )`, borderRadius: "2rem"}}>
                 <svg style={{ width: "100%", height: "100%", paddingTop: "2rem", fontWeight: "900"}} viewBox="0 0 300 300">
