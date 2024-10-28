@@ -1,0 +1,98 @@
+.wrap {
+    height: 80vh;
+    background-color: #cfece5;
+}
+
+.contents {
+    position: relative;
+    width: 120rem;
+    height: 100%;
+    border: 1px solid red;
+    margin: 0 auto;
+}
+
+.textSection {
+    /* border: 1px solid rgb(255, 174, 0); */
+    text-align: center;
+    width: 35%;
+    margin-top: 23rem;
+}
+
+.title {
+    background-color: black;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.aiInput {
+    text-indent: 1rem;
+    width: 90%;
+    padding: 12px 0;
+    border-radius: 1.3rem;
+    border: 2px solid #00d1ff;
+    color: #fff;
+    font-size: 1.3rem;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 1rem rgba(0, 209, 255, 0.6);
+    -webkit-border-radius: 1.3rem;
+    -moz-border-radius: 1.3rem;
+    -ms-border-radius: 1.3rem;
+    -o-border-radius: 1.3rem;
+}
+
+.aiInput::placeholder {
+    color: #aaa;
+}
+
+.aiInput:focus {
+    box-shadow: 0 0 1rem rgba(0, 94, 255, 0.8);
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2rem;
+    color: #333;
+}
+
+.detailsLink {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 0.1rem solid #333;
+    font-size: 1.4rem;
+}
+
+.imageSection {
+    width: 50%;
+    text-align: center;
+}
+
+.imageSection img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pagination {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
