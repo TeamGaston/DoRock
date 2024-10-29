@@ -1,6 +1,110 @@
 .footerArea{
+    margin-top:2rem;
+    color: #fff;
+    padding:2rem;
+    /* 이미지 있는거 */
+    background-image: url("../images/footerImg.jpg");
+    background-color: rgba(202, 202, 202, 0.5);
+
+    /* 이미지없는거  */
+    /* background-color: #333; */
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+
+    text-shadow: 0.2rem 0.2rem   #333;
+
+    /* text-shadow: 
+    0.2rem 0.2rem 0 black,  
+   -0.2rem -0.2rem 0 black, 
+    0.2rem -0.2rem 0 black,
+   -0.2rem 0.2rem 0 black;  */
+   
+    font-weight: 900;
+}
+
+.footerSection{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footerSection article{
+    display:flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.footerSection h4{
+    font-size: 3rem;
+}
+.footerSection p{
+    font-size: 2rem;
+}
+
+.footerSection i{
+    border:0.5rem solid white;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    margin:1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.footerSection i:hover{
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+/*gu version*/
+
+/* .footerArea{
     width:100%;
     height:30rem;
     background-color: lightgrey;
     margin-top:2rem;
 }
+
+.footerTopArea{
+    display:flex;
+    align-items: center;
+    width:100%;
+    height:8rem;
+    background-color: antiquewhite;
+    box-sizing: border-box;
+    padding-left:5rem;
+}
+
+.footerTopArea img{
+    width:5rem;
+    height:5rem;
+}
+
+.footerTopArea h1{
+    line-height: 8rem;
+    font-size: 3rem;
+    
+}
+
+.footerMidArea{
+    width:100%;
+    height:15rem;
+    background-color: azure;
+}
+
+.footerBottomArea{
+    width:100%;
+    height:7rem;
+    background-color: blanchedalmond;
+} */
+
