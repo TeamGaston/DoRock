@@ -4,8 +4,8 @@ import {Routes, Route} from "react-router-dom";
 import Navigator from "./pages/Navigator"; // Nav Bar
 
 import Home from "./pages/Home"; // Home
-import Home_MapClicker from "./pages/Home_MapClicker";
-import Home_SigunguClicker from "./pages/Home_SigunguClicker";
+import HomeMapClicker from "./pages/Home_MapClicker";
+import HomeSigunguClicker from "./pages/Home_SigunguClicker";
 
 import AIprompt from "./pages/AIprompt"; // AIprompt
 
@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Navigator />
       <Routes>
-        <Route path="/" element={<><Home/><Home_MapClicker/><Home_SigunguClicker/></>}/>
+        <Route path="/" element={<><Home/><HomeMapClicker/><HomeSigunguClicker/></>}/>
         <Route path="/tripInfo" element={<TripInfo />}/>
         <Route path="/aiPrompt" element={<AIprompt />}/>
         <Route path="/aiPlanner" element={<AIplanner />}/>
