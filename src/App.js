@@ -9,6 +9,7 @@ import AIprompt from "./pages/AIprompt"; // AIprompt
 import AIplanner from "./pages/AIplanner"; // AIplanner
 import TripInfo from "./pages/TripInfo"; // 관광지
 
+import Footer from "./pages/Footer" // Footer
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/aiPrompt" element={<AIprompt />}/>
         <Route path="/aiPlanner" element={<AIplanner />}/>
       </Routes>
+      <Footer /> 
     </div>
   );
 }
