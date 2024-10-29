@@ -16,9 +16,10 @@ function Navigator() {
             </nav>
             <section className={styles.buttonArea}>여백</section>
         </div>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/counter">Counter</Link> | <Link to="/input">Input</Link> | <Link to="/input2">Input2</Link> | <Link to="/list">List</Link> | <Link to="/TripInfoPage">TripInfoPage</Link>
         </>
     )
+
+    /*<Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/counter">Counter</Link> | <Link to="/input">Input</Link> | <Link to="/input2">Input2</Link> | <Link to="/list">List</Link> | <Link to="/TripInfoPage">TripInfoPage</Link> */
 }
 
 export default Navigator;

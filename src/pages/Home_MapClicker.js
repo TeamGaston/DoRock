@@ -32,7 +32,7 @@ function GangwonMap() {
     }
 
     const onMapClick = (region) => {
-        navigate(`/info/${region}`);
+        navigate(`/tripInfo/${region}`);
     }
 
     return (
