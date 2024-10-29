@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import backgroundImage from '../images/linear.png';
 
-function GangwonMap() {
+function Home_MapClicker() {
     const [hovoredRegion, setRegion] = useState(null);
     const navigate = useNavigate();
 
@@ -275,4 +275,4 @@ function GangwonMap() {
     );
 }
 
-export default GangwonMap;
+export default Home_MapClicker;
