@@ -47,10 +47,12 @@ import areaCode1 from '../data/areaCode1.json';
 import searchKeyword1 from '../data/searchKeyword1.json';
 import styles from '../css/TripInfoPage.module.css';
 import loadingGif from './loading.gif';
+import { useNavigate } from 'react-router-dom';
 
 const TripInfoPage = () => {
     const areaCode = areaCode1.response.body.items.item;
     const searchKeyword = searchKeyword1.response.body.items.item;
+    const navigate = useNavigate();
 
     // CDN 이미지 경로 설정
     const images = [];
@@ -80,14 +82,14 @@ const TripInfoPage = () => {
         });
 
         Promise.all(imagePromises).then(() => {
-            console.log("모든 이미지가 로드되었습니다.");
+            //console.log("모든 이미지가 로드되었습니다.");
             setAllImagesLoaded(true);
         });
     }, [images]);
 
     // 모든 이미지가 로딩되기 전에는 로딩 GIF를 표시
     if (!allImagesLoaded) {
-        console.log("이미지가 아직 로딩 중입니다...");
+        //console.log("이미지가 아직 로딩 중입니다...");
         return (
             <div className={styles.main}>
                 <section className={styles.title_section}>
@@ -101,7 +103,10 @@ const TripInfoPage = () => {
     }
 
     const htmlTemplate = areaCode.map((value, index) => (
-        <a href="#" key={value.code} className={styles.card}>
+        <div key={value.code} className={styles.card} 
+            onClick={() => navigate(`/tripInfo`, { 
+                state: { sigunguCode: value.code }
+            })}>
             <article className={styles.imageContainer}>
                 <img
                     src={images[index]}
@@ -110,10 +115,10 @@ const TripInfoPage = () => {
                 />
                 <h3 className={styles.title}>{value.name}</h3>
             </article>
-        </a>
+        </div>
     ));
 
-    console.log("모든 이미지가 로딩되었으며, 본 페이지를 표시합니다.");
+    //console.log("모든 이미지가 로딩되었으며, 본 페이지를 표시합니다.");
 
     return (
         <div className={styles.main}>

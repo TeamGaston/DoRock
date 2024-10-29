@@ -1,0 +1,45 @@
+.tripInfoArea {
+    margin: auto;
+    width: 94rem;
+    height: 100%;
+}
+
+.tripInfoTitle {
+    font-size: 5rem;
+    font-weight: 600;
+
+    width: 100%;
+    border-bottom: 1px solid grey;
+    margin-bottom: 1rem;
+}
+
+.touristSpotBoxes {
+    width: 100%;
+    height: 60rem;
+
+    overflow: scroll;
+}
+
+.touristSpotBox {
+    width: 30rem;
+    height: 30rem;
+    float: left;
+}
+
+.touristSpotImg {
+    width: 100%;
+    height: 80%;
+
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.touristSpotTitle {
+    width: 100%;
+    height: 20%;
+
+    font-size: 3rem;
+    line-height: 100%;
+    text-align: center;
+}
