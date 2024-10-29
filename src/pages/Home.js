@@ -2,24 +2,32 @@ import React, { useState, useEffect } from 'react';
 import styles from '../css/Home.module.css';
 import images from '../images/1.jpg';
 
+import HomeMapClicker from "./Home_MapClicker";
+import HomeSigunguClicker from "./Home_SigunguClicker";
+import { useNavigate } from 'react-router-dom';
+
 
 function Home() {
     return (
-        <div className={styles.wrap}>
+        <>
             <Contents />
-        </div>
+            <HomeMapClicker />
+            <HomeSigunguClicker />
+        </>
     )
 }
 
 function Contents() {
+    const navigate = useNavigate();
+
     return (
-        <>
+        <div className={styles.wrap}>
             <section className={styles.contents}>
                 <div className={styles.textSection}>
                     <p className={styles.title}>강원도의 특별한 여행지를 클릭 한 번으로 만나보세요.</p>
                     <p className={styles.inputBox}>
                         <input className={styles.aiInput} type="text" placeholder="어디로 여행을 떠나시나요?" />
-                        <button className={styles.submitBtn}><i class="xi-send"></i></button>
+                        <button className={styles.submitBtn} onClick={() => navigate("/aiPlanner")}><i class="xi-send"></i></button>
                     </p>
                 </div>
                 <div className={styles.imageSection}></div>
@@ -46,8 +54,7 @@ function Contents() {
                 <button className={styles.pauseButton}>||</button>
                 <button className={styles.nextButton}>&rarr;</button>
             </div>
-
-        </>
+        </div>
     );
 }
 export default Home;
