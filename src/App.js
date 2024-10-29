@@ -4,12 +4,9 @@ import {Routes, Route} from "react-router-dom";
 import Navigator from "./pages/Navigator"; // Nav Bar
 
 import Home from "./pages/Home"; // Home
-import HomeMapClicker from "./pages/Home_MapClicker";
-import HomeSigunguClicker from "./pages/Home_SigunguClicker";
 
 import AIprompt from "./pages/AIprompt"; // AIprompt
-
-import AIplanner from "./pages/AIplanner"; // GPT
+import AIplanner from "./pages/AIplanner"; // AIplanner
 import TripInfo from "./pages/TripInfo"; // 관광지
 
 

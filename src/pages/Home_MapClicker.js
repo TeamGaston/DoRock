@@ -32,7 +32,11 @@ function GangwonMap() {
     }
 
     const onMapClick = (region) => {
-        navigate(`/tripInfo/${region}`);
+        navigate(`/tripInfo`, {
+            state: {
+                sigunguCode: region
+            }
+        });
     }
 
     return (
