@@ -11,7 +11,7 @@ function Navigator() {
                 <ul className={styles.menuElement}>
                     <li><Link to="/" className={styles.linkStyle}>홈</Link> </li>
                     <li><Link to="/tripInfo" className={styles.linkStyle}>여행정보</Link></li>
-                    <li><Link to="/aiPlanner" className={styles.linkStyle}>AI여행</Link></li>
+                    <li><Link to="/aiPrompt" className={styles.linkStyle}>AI여행</Link></li>
                 </ul>
             </nav>
             <section className={styles.buttonArea}>여백</section>

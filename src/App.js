@@ -17,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<><Home/><Home_MapClicker/><Home_SigunguClicker/></>}/>
         <Route path="/tripInfo" element={<TripInfo />}/>
+        <Route path="/aiPrompt" element={<AIprompt />}/>
         <Route path="/aiPlanner" element={<AIplanner />}/>
       </Routes>
     </div>
