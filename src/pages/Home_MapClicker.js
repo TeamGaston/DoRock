@@ -20,15 +20,17 @@ function Home_MapClicker() {
     }
 
     const svgStyle = (region) => ({
-        fill: hovoredRegion === region ? "#87CEEB" : "#ffffff",
+        fill: hovoredRegion === region ? "#00AAFF" : "#ffffff",
         stroke: "#1D1D1F",
         strokeWidth: 1.5,
         transition: ".3s",
     });
 
-    const textStyle = {
+    const textStyle = (region) => ({
         pointerEvents: "none",
-    }
+        fill: hovoredRegion === region ? "#ffffff" : "#1D1D1F",
+        transition: ".3s",
+    });
 
     const onMapClick = (region) => {
         navigate(`/tripInfo`, {
@@ -162,110 +164,110 @@ function Home_MapClicker() {
                         <text
                             x="278.92902"
                             y="794.35809"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["원주"])}
                                 x="278.92902"
                                 y="794.35809">원주</tspan></text>
                         <text
                             x="252.55449"
                             y="691.43311"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["춘천"])}
                                 x="252.55449"
                                 y="691.43311">춘천</tspan></text>
                         <text
                             x="412.08823"
                             y="719.09418"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["강릉"])}
                                 x="412.08823"
                                 y="719.09418">강릉</tspan></text>
                         <text
                             x="441.03589"
                             y="758.33435"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["동해"])}
                                 x="441.03589"
                                 y="758.33435">동해</tspan></text>
                         <text
                             x="364.48541"
                             y="637.39746"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["속초"])}
                                 x="364.48541"
                                 y="637.39746">속초</tspan></text>
                         <text
                             x="457.7612"
                             y="798.21777"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["삼척"])}
                                 x="457.7612"
                                 y="798.21777">삼척</tspan></text>
                         <text
                             x="431.38666"
                             y="820.7326"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["태백"])}
                                 x="431.38666"
                                 y="820.7326">태백</tspan></text>
                         <text
                             x="302.73044"
                             y="713.94794"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["홍천"])}
                                 x="302.73044"
                                 y="713.94794">홍천</tspan></text>
                         <text
                             x="198.51886"
                             y="626.46167"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["철원"])}
                                 x="198.51886"
                                 y="626.46167">철원</tspan></text>
                         <text
                             x="303.37369"
                             y="754.47467"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["횡성"])}
                                 x="303.37369"
                                 y="754.47467">횡성</tspan></text>
                         <text
                             x="348.40338"
                             y="751.90149"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["평창"])}
                                 x="348.40338"
                                 y="751.90149">평창</tspan></text>
                         <text
                             x="389.57339"
                             y="784.06561"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["정선"])}
                                 x="389.57339"
                                 y="784.06561">정선</tspan></text>
                         <text
                             x="353.54962"
                             y="813.01324"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["영월"])}
                                 x="353.54962"
                                 y="813.01324">영월</tspan></text>
                         <text
                             x="323.95871"
                             y="660.5556"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["인제"])}
                                 x="323.95871"
                                 y="660.5556">인제</tspan></text>
                         <text
                             x="343.90042"
                             y="605.2334"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["고성"])}
                                 x="343.90042"
                                 y="605.2334">고성</tspan></text>
                         <text
                             x="372.2048"
                             y="666.34509"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["양양"])}
                                 x="372.2048"
                                 y="666.34509">양양</tspan></text>
                         <text
                             x="242.26199"
                             y="639.32733"
                             id="text3064"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["화천"])}
                                 x="242.26199"
                                 y="639.32733">화천</tspan></text>
                         <text
                             x="284.71854"
                             y="638.68402"
-                            ><tspan style={textStyle}
+                            ><tspan style={textStyle(sigunguCode["양구"])}
                                 x="284.71854"
                                 y="638.68402">양구</tspan></text>
                     </g>
