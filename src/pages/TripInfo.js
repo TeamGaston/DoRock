@@ -1,52 +1,95 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import areaCode from "../data/areaCode1.json";
+import AreaCode from "../data/areaCode1.json";
+import TouristSpot from "../data/touristSpot.json";
 import styles from "../css/TripInfo.module.css";
 import loadingGif from './loading.gif';
+
+import TripInfoPopup from "./TripInfoPopup";
 
 const TripInfo = () => {
     const location = useLocation();
 
-    const [sigunguCode, setSigunguCode] = useState(location.state ? location.state.sigunguCode : "" );
-    const [touristSpotArr, setTouristSpotArr] = useState(null);
-    const [areaName, setAreaName] = useState("");
-    
+    const [sigunguCode, setSigunguCode] = useState(location.state?.sigunguCode ? [location.state.sigunguCode] : ["all"]); // sigunguCode 업데이트
+    const [touristSpotObj, setTouristSpotObj] = useState(null); // 정리된 TouristSpot
+    const [touristSpotArr, setTouristSpotArr] = useState(null); // 정리된 TouristSpot에 ["sigunguCode"]
+    const [areaName, setAreaName] = useState(""); // Page Title 변경을 위한
+    const [isPopupOn, setPopupOn] = useState(false); // 팝업 토글
 
-    useEffect(() => {
-        console.log(areaCode);
-        const areaName = "#" + (sigunguCode === "" ? "강원도" : areaCode["response"]["body"]["items"]["item"][Number(sigunguCode)-1]["name"]);
-        setAreaName( areaName );
+    useEffect(() => { // 초기 실행 코드 // 객체 정리 (속도 향상을 위해)
+        const touristSpotArr = (TouristSpot.response.body.items.item).filter((touristSpot) => touristSpot["firstimage"]);
+        const organizedTouristSpot = { "all": [] };
+        touristSpotArr.forEach(touristSpot => {
+            organizedTouristSpot["all"].push(touristSpot);
+            if (touristSpot["sigungucode"] in organizedTouristSpot) {
+                organizedTouristSpot[touristSpot["sigungucode"]].push(touristSpot);
+            } else {
+                organizedTouristSpot[touristSpot["sigungucode"]] = [touristSpot];
+            }
+        });
+        setTouristSpotObj(organizedTouristSpot);
+    }, []);
 
-        const getTourApi = async () => {
-            const urn = `http://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=McSZCW7LYX8dGwLtln2CN8hlWwnQkFQbibX470nlV797KxeZzTTWZdZ5%2Bsrqy%2FIDP8MDn%2BJHLxLcbsNQSKr6SQ%3D%3D&pageNo=1&numOfRows=200&MobileApp=AppTest&MobileOS=ETC&arrange=A&_type=json&contentTypeId=12&areaCode=32&sigunguCode=${sigunguCode}`;
+    useEffect(() => { // location 변경 감지
+        setSigunguCode(location.state?.sigunguCode ? [location.state.sigunguCode] : ["all"]);
+    }, [location.state]);
 
-            const touristSpotRes = await fetch(urn);
-            const touristSpot = await touristSpotRes.json();
+    useEffect(() => { // sigunguCode가 바뀔 때 마다 실행될 코드 // 정리해둔 객체를 통해 데이터 시각화
+        let areaName = "";
+        console.log(sigunguCode)
+        sigunguCode.forEach((sigunguNum) => {
+            console.log(sigunguNum)
+            if (sigunguNum === "all") {
+                areaName += "# 강원도 ";
+            } else {
+                areaName += `# ${AreaCode["response"]["body"]["items"]["item"][Number(sigunguNum) - 1]["name"]} `;
+            }
+        });
 
-            setTouristSpotArr(touristSpot.response.body.items.item);
-            console.log("data is ready")
+        setAreaName(areaName);
+        if (touristSpotObj !== null) {
+            const touristSpots = [];
+            sigunguCode.forEach((sigungu) => {
+                //touristSpotObj[sigungu];
+                touristSpots.push(...touristSpotObj[sigungu])
+            })
+            setTouristSpotArr(touristSpots);
+            console.log(touristSpots)
         }
-        getTourApi(); // api 관광지 데이터 불러오기
-    }, [sigunguCode]);
+
+    }, [touristSpotObj, sigunguCode]);
+
+    const selectAreaButtonClick = () => {
+        setPopupOn(!isPopupOn);
+    }
 
     return (
-        <div className={styles.tripInfoArea}>
-            <h1 className={styles.tripInfoTitle}>{areaName}</h1>
-            <div className={styles.touristSpotBoxes}>
-                {touristSpotArr ? (
-                    touristSpotArr
-                        .filter((touristInfo) => touristInfo["firstimage"])
-                        .map((touristInfo, index) => (
-                            <div key={index} className={styles.touristSpotBox}>
-                                <div className={styles.touristSpotImg} style={{backgroundImage: `url(${touristInfo["firstimage"]})`}}></div>
-                                <p className={styles.touristSpotTitle}>{touristInfo["title"]}</p>
-                            </div>
-                        ))
-                ) : (
-                    <img src={loadingGif} alt="Loading..." />
-                )}
-            </div>
-        </div>
+        <section className={styles.tripInfoWrapper}>
+            <section className={styles.tripInfoArea}>
+                <article className={styles.titleArea}>
+                    <h1 className={styles.tripInfoTitle}>{areaName}</h1>
+                    <button className={styles.selectButton} onClick={(e) => { selectAreaButtonClick() }}>지역선택</button>
+                </article>
+                <article className={styles.touristSpotBoxes}>
+                    {touristSpotArr ? (
+                        touristSpotArr
+                            .map((touristInfo, index) => (
+                                <div key={index} className={styles.touristSpotBox}>
+                                    <div className={styles.touristSpotImg} style={{ backgroundImage: `url(${touristInfo["firstimage"]})` }}></div>
+                                    <div className={styles.infoArea}>
+                                        <p className={styles.touristSpotTitle}>{touristInfo["title"]}</p>
+                                        <p className={styles.touristSpotAddr}>{`${touristInfo["addr1"]} ${touristInfo["addr2"]}`}</p>
+                                    </div>
+                                </div>
+                            ))
+                    ) : (
+                        <img src={loadingGif} alt="Loading..." />
+                    )}
+                </article>
+                {isPopupOn ? <TripInfoPopup closePopup={setPopupOn} research={setSigunguCode} /> : null}
+            </section>
+        </section>
+
     )
 }
 

@@ -71,11 +71,11 @@ const TripInfoPage = () => {
                 const img = new Image();
                 img.src = src;
                 img.onload = () => {
-                    console.log(`이미지 ${index} 로드 완료:`, src);
+                    //console.log(`이미지 ${index} 로드 완료:`, src);
                     resolve(true);
                 };
                 img.onerror = () => {
-                    console.log(`이미지 ${index} 로드 실패:`, src);
+                    //console.log(`이미지 ${index} 로드 실패:`, src);
                     resolve(true);
                 };
             });
