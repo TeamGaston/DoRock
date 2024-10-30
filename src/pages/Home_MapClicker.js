@@ -8,8 +8,8 @@ function Home_MapClicker() {
 
     const sigunguCode = {
         "강릉": 1, "고성": 2, "동해": 3, "삼척": 4, "속초": 5, "양구": 6,
-        "양양": 7, "영월": 8, "원주": 9, "인제": 10,"정선": 11,"철원": 12,
-        "춘천": 13,"태백": 14,"평창": 15,"홍천": 16,"화천": 17,"횡성": 18
+        "양양": 7, "영월": 8, "원주": 9, "인제": 10, "정선": 11, "철원": 12,
+        "춘천": 13, "태백": 14, "평창": 15, "홍천": 16, "화천": 17, "횡성": 18
     };
 
     const mouseOverEvent = (region) => {
@@ -20,7 +20,7 @@ function Home_MapClicker() {
     }
 
     const svgStyle = (region) => ({
-        fill: hovoredRegion === region ? "#87CEEB" : "#ffffff",
+        fill: hovoredRegion === region ? "#D1DDB6" : "#ffffff",
         stroke: "#1D1D1F",
         strokeWidth: 1.5,
         transition: ".3s",
@@ -40,15 +40,30 @@ function Home_MapClicker() {
 
     return (
         // background: "linear-gradient(135deg, #87CEEB, #90EE90)
-            <div style={{ backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            width: "100vw", height: "50rem", position: "relative", marginBottom:"35rem"}}>
-            <h1 style={{position: "absolute", fontSize: "4rem", top: "0", height: "5rem", paddingLeft:"52rem", paddingTop:"2rem"}}>여행하면 강원도-락도락</h1>
-            <div style={{ width: "110rem", height: "54rem", position: "absolute", 
-                background: "#F9F9F9", top: "17vh", left: `50%`, transform: `translate(-50%)`, borderRadius: "2rem"}}>
-                <svg style={{ width: "100%", height: "90%", paddingTop: "2rem", marginTop: "3rem", fontWeight: "900", marginBottom: "10rem"}} viewBox="0 0 300 300">
-                    <g 
+        <div
+            style={{
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                width: "100vw",
+                height: "60rem",
+                position: "relative",
+                marginBottom: "20rem"
+            }}
+        >
+            <div style={{ width: "110rem", margin: "0 auto", }}>
+                <h1 style={{
+                    width: "41rem", fontSize: "4rem", height: "7rem", paddingTop: "0.7rem", textAlign: "center", display: "inline-block",
+                    borderRadius: "0 0 2.5rem 2.5rem", background: "#333", color: "#fff", fontSize: "3rem", fontWeight: "460", letterSpacing: "0.19rem"
+                }}>여행하면 강원도-락도樂</h1>
+            </div>
+
+            <div style={{
+                width: "110rem", height: "54rem", position: "absolute",
+                background: "#F9F9F9", top: "15vh", left: `50%`, transform: `translate(-50%)`, borderRadius: "2rem"
+            }}>
+                <svg style={{ width: "100%", height: "90%", paddingTop: "2rem", marginTop: "3rem", fontWeight: "900", marginBottom: "10rem" }} viewBox="0 0 300 300">
+                    <g
                         transform="translate(-165.71152,-554.19203)">
                         <path
                             d="m 236.35671,606.59978 -4.39082,0 -8.01872,5.99575 -4.39197,-0.38757 -1.9096,-2.51457 -3.43659,0 -3.62676,-2.7072 -7.44595,-0.77398 -1.9096,2.32079 -4.77229,-0.38641 -2.29106,2.70719 -1.52699,-3.48118 -4.96359,0 -1.7183,-0.9666 -7.06449,3.86759 -3.05513,-0.96661 -1.9096,-2.127 -3.24529,0.38641 -1.90961,5.41555 -2.48236,2.90099 0,7.34877 2.09976,2.70719 4.00936,-2.127 2.48236,6.18838 2.48237,4.06137 -0.38146,3.67497 4.77343,4.44779 8.40018,-7.34877 2.48237,1.5468 -1.7183,9.86334 4.77343,1.1604 2.29106,4.06137 1.7183,-1.74059 4.20066,-3.09477 6.30043,2.32079 1.33454,-1.93322 9.35556,-2.127 1.52699,-4.06137 -2.09976,-2.51457 2.09976,-7.34877 c 0,0 4.96359,-0.77399 4.96359,-1.35418 0,-0.5802 0.1913,-3.86759 0.1913,-3.86759 l 4.39083,-1.74059 4.20066,-6.96236 -3.05399,-3.09477 3.6279,-5.99575 -0.38261,-1.35302 z"
@@ -67,7 +82,7 @@ function Home_MapClicker() {
                             onMouseEnter={() => mouseOverEvent(sigunguCode["춘천"])}
                             onMouseLeave={() => mouseLeaveEvent()}
                             onClick={() => onMapClick(sigunguCode["춘천"])}
-                            style={svgStyle(sigunguCode["춘천"])}/>
+                            style={svgStyle(sigunguCode["춘천"])} />
                         <path
                             d="m 376.11156,693.43547 -5.5375,-6.76857 -5.34505,0.77398 -3.6279,-0.58019 -6.30042,4.06137 -2.86383,-3.28855 -2.67253,3.86759 -4.20066,4.06138 -1.7183,2.90098 -5.53635,-1.93438 -2.48237,-5.02798 -4.58212,1.16039 -2.09976,4.25516 -6.30043,4.06138 -5.72765,-7.15614 -0.19131,-6.38217 -11.45531,-0.9666 -7.82742,-7.54256 -4.20066,0.38641 -4.39083,11.41015 -1.71829,1.74059 -2.67367,7.15614 -4.77229,-5.60818 -2.48237,-0.19378 -2.29106,4.83535 -5.91896,-1.35418 -1.33569,1.74059 1.14553,4.25517 3.81806,7.15614 -2.09976,4.83536 -15.65598,0.96661 -7.06335,3.28739 0.57277,3.48118 -2.86383,0 -2.67253,2.90098 -2.29106,-2.7072 -2.09976,3.67497 -1.14553,-2.90098 -2.67367,-3.28856 -4.58213,-2.127 -0.57276,11.21752 -2.67367,1.35302 3.24529,5.02798 7.06449,-3.48118 14.12784,9.47693 9.73702,0.19379 4.00936,1.74059 7.2558,5.80197 4.39082,-2.127 2.09976,-6.38217 4.39197,-0.9666 4.19951,-1.74059 2.48237,-5.41556 4.77343,2.127 2.67253,2.7072 8.21002,-7.54256 3.43659,-0.38641 1.33569,-3.86759 3.24644,0.19379 2.86383,2.90098 8.01872,2.127 1.14553,4.06138 4.58213,-0.19379 2.29106,-5.80196 6.49058,-7.92897 16.42005,0.96661 2.09976,-5.41556 3.43659,-2.127 7.25466,-0.38641 -0.38147,-4.06137 2.09976,-5.22177 1.33684,-3.09477 5.34619,-2.127 -1.33683,-3.86875 0.76407,-2.90099 z"
                             onMouseEnter={() => mouseOverEvent(sigunguCode["홍천"])}
@@ -162,112 +177,112 @@ function Home_MapClicker() {
                         <text
                             x="278.92902"
                             y="794.35809"
-                            ><tspan style={textStyle}
-                                x="278.92902"
-                                y="794.35809">원주</tspan></text>
+                        ><tspan style={textStyle}
+                            x="278.92902"
+                            y="794.35809">원주</tspan></text>
                         <text
                             x="252.55449"
                             y="691.43311"
-                            ><tspan style={textStyle}
-                                x="252.55449"
-                                y="691.43311">춘천</tspan></text>
+                        ><tspan style={textStyle}
+                            x="252.55449"
+                            y="691.43311">춘천</tspan></text>
                         <text
                             x="412.08823"
                             y="719.09418"
-                            ><tspan style={textStyle}
-                                x="412.08823"
-                                y="719.09418">강릉</tspan></text>
+                        ><tspan style={textStyle}
+                            x="412.08823"
+                            y="719.09418">강릉</tspan></text>
                         <text
                             x="441.03589"
                             y="758.33435"
-                            ><tspan style={textStyle}
-                                x="441.03589"
-                                y="758.33435">동해</tspan></text>
+                        ><tspan style={textStyle}
+                            x="441.03589"
+                            y="758.33435">동해</tspan></text>
                         <text
                             x="364.48541"
                             y="637.39746"
-                            ><tspan style={textStyle}
-                                x="364.48541"
-                                y="637.39746">속초</tspan></text>
+                        ><tspan style={textStyle}
+                            x="364.48541"
+                            y="637.39746">속초</tspan></text>
                         <text
                             x="457.7612"
                             y="798.21777"
-                            ><tspan style={textStyle}
-                                x="457.7612"
-                                y="798.21777">삼척</tspan></text>
+                        ><tspan style={textStyle}
+                            x="457.7612"
+                            y="798.21777">삼척</tspan></text>
                         <text
                             x="431.38666"
                             y="820.7326"
-                            ><tspan style={textStyle}
-                                x="431.38666"
-                                y="820.7326">태백</tspan></text>
+                        ><tspan style={textStyle}
+                            x="431.38666"
+                            y="820.7326">태백</tspan></text>
                         <text
                             x="302.73044"
                             y="713.94794"
-                            ><tspan style={textStyle}
-                                x="302.73044"
-                                y="713.94794">홍천</tspan></text>
+                        ><tspan style={textStyle}
+                            x="302.73044"
+                            y="713.94794">홍천</tspan></text>
                         <text
                             x="198.51886"
                             y="626.46167"
-                            ><tspan style={textStyle}
-                                x="198.51886"
-                                y="626.46167">철원</tspan></text>
+                        ><tspan style={textStyle}
+                            x="198.51886"
+                            y="626.46167">철원</tspan></text>
                         <text
                             x="303.37369"
                             y="754.47467"
-                            ><tspan style={textStyle}
-                                x="303.37369"
-                                y="754.47467">횡성</tspan></text>
+                        ><tspan style={textStyle}
+                            x="303.37369"
+                            y="754.47467">횡성</tspan></text>
                         <text
                             x="348.40338"
                             y="751.90149"
-                            ><tspan style={textStyle}
-                                x="348.40338"
-                                y="751.90149">평창</tspan></text>
+                        ><tspan style={textStyle}
+                            x="348.40338"
+                            y="751.90149">평창</tspan></text>
                         <text
                             x="389.57339"
                             y="784.06561"
-                            ><tspan style={textStyle}
-                                x="389.57339"
-                                y="784.06561">정선</tspan></text>
+                        ><tspan style={textStyle}
+                            x="389.57339"
+                            y="784.06561">정선</tspan></text>
                         <text
                             x="353.54962"
                             y="813.01324"
-                            ><tspan style={textStyle}
-                                x="353.54962"
-                                y="813.01324">영월</tspan></text>
+                        ><tspan style={textStyle}
+                            x="353.54962"
+                            y="813.01324">영월</tspan></text>
                         <text
                             x="323.95871"
                             y="660.5556"
-                            ><tspan style={textStyle}
-                                x="323.95871"
-                                y="660.5556">인제</tspan></text>
+                        ><tspan style={textStyle}
+                            x="323.95871"
+                            y="660.5556">인제</tspan></text>
                         <text
                             x="343.90042"
                             y="605.2334"
-                            ><tspan style={textStyle}
-                                x="343.90042"
-                                y="605.2334">고성</tspan></text>
+                        ><tspan style={textStyle}
+                            x="343.90042"
+                            y="605.2334">고성</tspan></text>
                         <text
                             x="372.2048"
                             y="666.34509"
-                            ><tspan style={textStyle}
-                                x="372.2048"
-                                y="666.34509">양양</tspan></text>
+                        ><tspan style={textStyle}
+                            x="372.2048"
+                            y="666.34509">양양</tspan></text>
                         <text
                             x="242.26199"
                             y="639.32733"
                             id="text3064"
-                            ><tspan style={textStyle}
-                                x="242.26199"
-                                y="639.32733">화천</tspan></text>
+                        ><tspan style={textStyle}
+                            x="242.26199"
+                            y="639.32733">화천</tspan></text>
                         <text
                             x="284.71854"
                             y="638.68402"
-                            ><tspan style={textStyle}
-                                x="284.71854"
-                                y="638.68402">양구</tspan></text>
+                        ><tspan style={textStyle}
+                            x="284.71854"
+                            y="638.68402">양구</tspan></text>
                     </g>
                 </svg>
             </div>

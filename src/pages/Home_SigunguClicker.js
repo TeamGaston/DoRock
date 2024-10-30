@@ -123,9 +123,10 @@ const TripInfoPage = () => {
     return (
         <div className={styles.main}>
             <section className={styles.title_section}>
-                <h1>강원도 추천 여행지</h1>
+                <h1>강원도 지역별 핫스팟 탐색</h1>
+                <div className={styles.triangle_down}></div>
             </section>
-
+            
             <section className={styles.img_section}>
                 {htmlTemplate}
             </section>

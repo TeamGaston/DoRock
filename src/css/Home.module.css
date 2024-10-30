@@ -1,202 +1,195 @@
+/* 전체 레이아웃 스타일 */
 .wrap {
-    position: relative;
-    height: 54rem;
-    background-color: #cfece5;
-    margin-bottom: 20rem;
+    height: 88vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    color: #333;
+    background: #edf7ed;
+    margin-bottom: 10rem;
 }
 
-.contents {
-    width: 120rem;
+/* 시간 및 날씨 바 */
+.timeWeatherBar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 3rem;
+
+    /* border: 1px solid red; */
+}
+
+
+.weatherTitle,
+.weather {
+    font-size: 2.1rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.timeTitle,
+.time {
+    font-size: 2.7rem;
+    font-weight: 550;
+    text-align: left;
+}
+
+/* 메인 콘텐츠 영역 */
+.mainContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* padding: 2rem; */
+    /* border: 1px solid red; */
+    margin-top: -3.5rem;
+}
+
+/* 슬라이드 영역 */
+.slideArea {
+    width: 48%;
+    height: 80%;
+}
+
+.slideimgWrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slideBox {
+    width: 100%;
+    height: 100%;
+    background-color: #e6f7ff;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: #555;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slideBox>img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    transition: opacity 1s ease-in-out;
+    /* 서서히 변환 효과 */
+}
+
+.slideBox img.active {
+    opacity: 1;
+}
+
+/* 프롬프트 박스 */
+.promptBox {
+    width: 45%;
     height: 50%;
-    border: 1px solid transparent;
-}
-
-.textSection {
+    background: linear-gradient(145deg, #ffffff, #f2f9f3);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1), -8px -8px 20px rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    width: 53%;
-    /* height: 80%; */
-    margin: 17.5rem 24.5rem;
-    padding: 3.5rem;
-    border-radius: 2rem;
-    /* background-color: #f9f9f942; */
-    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.textSection:hover {
+.promptBox:hover {
     transform: translateY(-0.3rem);
-    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.15);
-    -webkit-transform: translateY(-0.3rem);
-    -moz-transform: translateY(-0.3rem);
-    -ms-transform: translateY(-0.3rem);
-    -o-transform: translateY(-0.3rem);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 20px rgba(255, 255, 255, 0.6);
 }
 
-.title {
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 1.5rem;
-    border-radius: 2rem;
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 2.5rem;
-    letter-spacing: 0.1rem;
-    margin-top: 0.8rem;
-}
-
-.inputBox{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-.aiInput {
-    text-indent: 1.5rem;
-    width: 85%;
-    padding: 1.5rem;
-    border-radius: 1.5rem;
-    border: 0.2rem solid #00aaff;
-    background-color: #fff;
+.promptTitle {
+    font-size: 3.1rem;
+    font-weight: bold;
     color: #333;
-    font-size: 1.6rem;
-    outline: none;
-    transition: all 0.3s;
-    box-shadow: 0 0 1rem rgba(0, 170, 255, 0.6);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
+    font-family: 'Roboto', sans-serif;
 }
 
-.aiInput::placeholder {
-    color: #bbb;
+/* 입력 필드 스타일 */
+.aiInput {
+    width: 90%;
+    padding: 1.35rem;
+    border-radius: 1.5rem;
+    border: 0.1rem solid #00aaff;
+    font-size: 2rem;
+    outline: none;
+    background: #ffffff;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    color: #333;
+    margin: 4.5rem 0;
 }
 
 .aiInput:focus {
     border-color: #0077cc;
-    box-shadow: 0 0 1.2rem rgba(0, 119, 204, 0.8);
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.15), inset -2px -2px 8px rgba(255, 255, 255, 0.8);
 }
 
+.aiInput::placeholder{
+    font-size: 1.8rem;
+}
+
+/* 버튼 스타일 */
 .submitBtn {
-    width: 5rem;
-    height: 5rem;
-    background: #00aaff;
-    color: #fff;
-    outline: none;
+    width: 17rem;
+    height: 4.5rem;
+    background: linear-gradient(145deg, #00aaff, #0077cc);
+    color: white;
     border: none;
-    border-radius: 50%;
-    margin-left: 1rem;
+    border-radius: 1.5rem;
+    font-size: 1.9rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 1rem rgba(0, 170, 255, 0.5);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .submitBtn:hover {
-    background-color: #0077cc;
-    box-shadow: 0 0 1.5rem rgba(0, 119, 204, 0.8);
+    background: linear-gradient(145deg, #0077cc, #005f99);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.5);
 }
 
-.submitBtn > i {
-    font-size: 2rem; 
+.submitBtn:active {
+    transform: scale(0.98);
 }
 
-/* ==slideArea== */
-.slideArea {
-    display: flex;
-    /* flex-wrap: wrap;  */
-    position: absolute;
-    width: 100%;
-    height: 90%;
-    background: transparent;
-    left: 52%;
-    /* left: 0%; */
-    top: 65%;
-    transform: translateY(-50%);
-    display: none;
-
-    /* overflow: hidden; */
-    /* border: 1px solid red; */
-}
-
-.sliderBox {
-    flex-shrink: 0;
-    /* width: 40%; */
-    width: 90rem;
-    height: 102%;
-    border: 1px solid red;
-}
-
-.slideImg {
-    width: 95%;
-    height: 100%;
-    border-radius:1rem;
-    -webkit-border-radius:1rem;
-    -moz-border-radius:1rem;
-    -ms-border-radius:1rem;
-    -o-border-radius:1rem;
-}
-/* ==slider nav== */
-.sliderNav {
-    position: relative;
-    left: -40rem;
-    top: 28rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-}
-
-.line {
-    width: 20rem;
-    height: 0.2rem;
-    background-color: #ccc;
-    margin-right: 1rem;
-}
-
-.pagination {
-    margin: 0 1rem;
-    font-weight: bold;
-}
-
+/* 좌우 화살표 버튼 스타일 */
 .prevButton,
 .nextButton,
-.pauseButton {
-    background: #fff;
-    width: 3rem;
-    height: 3rem;
-    border: none;
-    line-height: 3rem;
-    font-size: 1.6rem;
-    cursor: pointer;
-    margin: 0 0.5rem;
+.stopButton {
+    margin-top: 1rem;
+    padding: 1rem;
     color: #333;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background: transparent;
     border-radius: 50%;
-    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 .prevButton:hover,
 .nextButton:hover,
-.pauseButton:hover {
-    color: #666; 
-    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
+.stopButton:hover {
+    font-weight: bold;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+
 }
 
-.prevButton:active,
-.nextButton:active,
-.pauseButton:active {
-    transform: translateY(0.1rem);
-    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
-    -webkit-transform: translateY(0.1rem);
-    -moz-transform: translateY(0.1rem);
-    -ms-transform: translateY(0.1rem);
-    -o-transform: translateY(0.1rem);
+.xi-pause {
+    font-size: 3rem;
 }
-
-

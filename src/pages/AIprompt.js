@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 import styles from '../css/Alprompt.module.css';
 
 
@@ -8,9 +8,9 @@ function Alprompt() {
         <div className={styles.alpromptContainer}>
             <section className={styles.content}>
                 <h1 className={styles.AITitle}>강원도 여행을 떠나요!</h1>
-                <p className={styles.AIsubText}>자연의 아름다움과 멋진 추억을 선사해드릴게요</p>
+                <p className={styles.AIsubText}>자연 속 강원도로 떠나 특별한 순간을 누려보세요.</p>
                 <article className={styles.tags}>
-                <input type="checkbox" id="leisure" className={styles.checkbox} />
+                    <input type="checkbox" id="leisure" className={styles.checkbox} />
                     <label htmlFor="leisure" className={styles.tagBtn}>레저</label>
 
                     <input type="checkbox" id="history" className={styles.checkbox} />
@@ -29,7 +29,7 @@ function Alprompt() {
                         className={styles.searchInput}
                     />
                     <button className={styles.searchBtn}>
-                        <span>&#x27A4;</span> {/* 화살표 기호 */}
+                        <span>&#x27A4;</span>
                     </button>
                 </article>
             </section>

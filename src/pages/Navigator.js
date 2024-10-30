@@ -14,7 +14,7 @@ function Navigator() {
                     <li><Link to="/aiPrompt" className={styles.linkStyle}>AI여행</Link></li>
                 </ul>
             </nav>
-            <section className={styles.buttonArea}>여백</section>
+            <section className={styles.buttonArea}></section>
         </div>
         </>
     )

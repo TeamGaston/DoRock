@@ -1,117 +1,109 @@
 .alpromptContainer {
+    position: relative;
     width: 100vw;
     height: calc(100vh - 9rem);
-    background: #f9f9f9;
     display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    padding: 2rem;
-    box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.05);
+    justify-content: center;
+    padding: 4rem;
+    background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.81), rgba(255, 255, 255, 0.45)),
+        url("../images/footerImg_2.jpg");
+    background-size: cover;
+    z-index: -1;
 }
 
 .content {
-    margin-top: -2rem;
-    padding: 5rem;
-    width: 80%; 
-    height: auto;
-    /* box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.15);  */
-    border-radius: 4rem;
-    /* background-color: #ffffffee; */
+    position: relative;
     text-align: center;
-
+    width: 70%;
+    margin-top: 16rem;
+    z-index: 2;
 }
 
 .AITitle {
-    font-size: 4.5rem; 
+    font-size: 5rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .AIsubText {
-    font-size: 3.5rem; 
+    font-size: 3rem;
     margin-top: 2rem;
-    color: #666;
+    color: #444;
+    font-weight: 500;
 }
 
 .tags {
-    margin: 4rem 0;
+    margin: 5rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
-.checkbox {
-    display: none;
-}
-
-/* 체크박스가 체크되었을 때 스타일 */
-.checkbox:checked + .tagBtn {
-    background-color: #4a90e2;
-    border: 2px solid #0052a5;
-    color: #fff;
-    box-shadow: 0px 4px 8px rgba(0, 82, 165, 0.4);
+.checkbox:checked+.tagBtn {
+    background-color: #ffd1a9;
+    border: 1px solid #ff8f5a;
+    color: #333;
+    box-shadow: 0px 3px 6px rgba(255, 143, 90, 0.3);
 }
 
 .tagBtn {
-    background-color: #eef5fd;
-    border: 2px solid #dfe7f2;
-    color: #0052a5;
+    background-color: #fff2e7;
+    border: 1px solid #fdd2b8;
+    color: #ff8f5a;
     border-radius: 2.5rem;
-    padding: 1.5rem 3rem; 
+    padding: 1.5rem 3rem;
     font-size: 2.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
 }
-
-.tagBtn:hover {
-    background-color: #dfe7f2;
-    box-shadow: 0px 6px 16px rgba(0, 82, 165, 0.3);
-}
-
-.tagBtn::before {
+.tagBtn::before{
     content: "#";
-    padding-right: 0.3rem;
+    padding-right: 0.5rem;
 }
 
 .searchBar {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem; 
+    margin-top: 5rem;
     width: 100%;
 }
 
 .searchInput {
-    padding: 1.5rem;
-    width: 70%; 
-    font-size: 2.2rem;
-    border: 2px solid #e0e0e0;
+    padding: 1.8rem;
+    width: 85%;
+    font-size: 2.5rem;
+    border: 2px solid #ffe0c1;
     border-radius: 3rem;
     outline: none;
     text-indent: 1.5rem;
-    background: #fff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05), inset 0px 1px 4px rgba(255, 255, 255, 0.5);
+    background: #fffdfa;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(255, 255, 255, 0.5);
     transition: all 0.4s ease-in-out;
     color: #333;
 }
 
 .searchInput:focus {
-    background: #f9f9f9;
-    border-color: #4a90e2;
-    box-shadow: 0px 0px 15px 3px rgba(74, 144, 226, 0.5), inset 0px 1px 4px rgba(255, 255, 255, 0.8);
+    background: #fff8f0;
+    border-color: #ff8f5a;
+    box-shadow: 0px 0px 10px 3px rgba(255, 143, 90, 0.5), inset 0px 1px 4px rgba(255, 255, 255, 0.8);
 }
 
 .searchInput::placeholder {
-    color: #aaa;
+    color: #d47c2a;
     opacity: 0.8;
 }
 
+input[type="checkbox"] {
+    display: none;
+}
+
 .searchBtn {
-    background-color: #4a90e2;
+    background-color: #ff8f5a;
     border: none;
     width: 7rem;
     height: 7rem;
@@ -119,20 +111,7 @@
     font-size: 2.5rem;
     color: white;
     cursor: pointer;
-    box-shadow: 0px 4px 12px rgba(74, 144, 226, 0.3);
+    box-shadow: 0px 3px 10px rgba(255, 143, 90, 0.3);
     transition: background-color 0.3s ease-in-out, transform 0.2s ease;
-    margin-left: 1.5rem;
-}
-
-.searchBtn:hover {
-    background-color: #357ab8;
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-}
-
-.searchBtn:active {
-    transform: scale(0.95);
+    margin-left: 2rem;
 }
