@@ -8,9 +8,22 @@
     font-size: 5rem;
     font-weight: 600;
 
-    width: 100%;
+    display: inline-block;
+    width: 80%;
     border-bottom: 1px solid grey;
     margin-bottom: 1rem;
+}
+
+.selectArea {
+    width: 20%;
+    height: 8rem;
+    float: right;
+
+    font-size: 3rem;
+    color: white;
+
+    background-color: blue;
+    border: none;
 }
 
 .touristSpotBoxes {
