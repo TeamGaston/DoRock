@@ -2,12 +2,39 @@ import React, { useState, useEffect } from 'react';
 import styles from '../css/Alprompt.module.css';
 
 
+
 function Alprompt() {
     return (
-        <div>
-           <h1>[AIprompt] 임시 PAGE 입니다</h1>
+        <div className={styles.alpromptContainer}>
+            <section className={styles.content}>
+                <h1 className={styles.AITitle}>강원도 여행을 떠나요!</h1>
+                <p className={styles.AIsubText}>자연의 아름다움과 멋진 추억을 선사해드릴게요</p>
+                <article className={styles.tags}>
+                <input type="checkbox" id="leisure" className={styles.checkbox} />
+                    <label htmlFor="leisure" className={styles.tagBtn}>레저</label>
+
+                    <input type="checkbox" id="history" className={styles.checkbox} />
+                    <label htmlFor="history" className={styles.tagBtn}>역사</label>
+
+                    <input type="checkbox" id="nature" className={styles.checkbox} />
+                    <label htmlFor="nature" className={styles.tagBtn}>자연</label>
+
+                    <input type="checkbox" id="shopping" className={styles.checkbox} />
+                    <label htmlFor="shopping" className={styles.tagBtn}>쇼핑</label>
+                </article>
+                <article className={styles.searchBar}>
+                    <input
+                        type="text"
+                        placeholder="어디로 여행을 떠나시나요?"
+                        className={styles.searchInput}
+                    />
+                    <button className={styles.searchBtn}>
+                        <span>&#x27A4;</span> {/* 화살표 기호 */}
+                    </button>
+                </article>
+            </section>
         </div>
-    )
+    );
 }
 
 export default Alprompt;

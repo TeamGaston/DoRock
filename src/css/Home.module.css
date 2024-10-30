@@ -1,11 +1,11 @@
 .wrap {
-    height: 53vh;
+    position: relative;
+    height: 54rem;
     background-color: #cfece5;
-    margin-bottom: 23rem;
+    margin-bottom: 20rem;
 }
 
 .contents {
-    position: relative;
     width: 120rem;
     height: 50%;
     border: 1px solid transparent;
@@ -14,11 +14,11 @@
 .textSection {
     text-align: center;
     width: 53%;
-    height: 80%;
+    /* height: 80%; */
     margin: 17.5rem 24.5rem;
     padding: 3.5rem;
     border-radius: 2rem;
-    background-color: #f9f9f942;
+    /* background-color: #f9f9f942; */
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -71,7 +71,6 @@
 
 .aiInput::placeholder {
     color: #bbb;
-    font-style: italic;
 }
 
 .aiInput:focus {
@@ -102,42 +101,45 @@
     font-size: 2rem; 
 }
 
-/* slideArea */
+/* ==slideArea== */
 .slideArea {
     display: flex;
-    flex-wrap: nowrap; 
+    /* flex-wrap: wrap;  */
     position: absolute;
-    width: 48%;
-    height: 52%;
+    width: 100%;
+    height: 90%;
     background: transparent;
-    right: 0;
-    top: 46%;
+    left: 52%;
+    /* left: 0%; */
+    top: 65%;
     transform: translateY(-50%);
-    overflow: hidden;
+    display: none;
+
+    /* overflow: hidden; */
+    /* border: 1px solid red; */
 }
 
 .sliderBox {
     flex-shrink: 0;
-    width: 85%;
-    height: 100%;
-    /* border: 1px solid red; */
+    /* width: 40%; */
+    width: 90rem;
+    height: 102%;
+    border: 1px solid red;
 }
 
 .slideImg {
     width: 95%;
     height: 100%;
-    object-fit: cover;
     border-radius:1rem;
     -webkit-border-radius:1rem;
     -moz-border-radius:1rem;
     -ms-border-radius:1rem;
     -o-border-radius:1rem;
 }
-
-/* slider nav */
+/* ==slider nav== */
 .sliderNav {
     position: relative;
-    left: -50rem;
+    left: -40rem;
     top: 28rem;
     display: flex;
     align-items: center;
@@ -161,33 +163,40 @@
 .prevButton,
 .nextButton,
 .pauseButton {
-    background: #ddd;
+    background: #fff;
     width: 3rem;
     height: 3rem;
     border: none;
-    font-size: 1.5rem;
+    line-height: 3rem;
+    font-size: 1.6rem;
     cursor: pointer;
     margin: 0 0.5rem;
     color: #333;
-    transition: color 0.3s ease-in-out;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    -webkit-transition: color 0.3s ease-in-out;
-    -moz-transition: color 0.3s ease-in-out;
-    -ms-transition: color 0.3s ease-in-out;
-    -o-transition: color 0.3s ease-in-out;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
 }
 
 .prevButton:hover,
 .nextButton:hover,
 .pauseButton:hover {
-    background-color: #555;
+    color: #666; 
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
 }
 
-.pauseButton {
-    font-size: 1.2rem;
-    margin: 0 1rem;
+.prevButton:active,
+.nextButton:active,
+.pauseButton:active {
+    transform: translateY(0.1rem);
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
+    -webkit-transform: translateY(0.1rem);
+    -moz-transform: translateY(0.1rem);
+    -ms-transform: translateY(0.1rem);
+    -o-transform: translateY(0.1rem);
 }
+
+
