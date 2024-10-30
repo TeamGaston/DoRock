@@ -13,16 +13,26 @@
 </div> */
 
 
-.popupContainer {
+/* .popupContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} */
+
+.popupBackground {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.5);
+    z-index: 50;
 }
 
 .popupMain {
+    z-index: 100;
     position: absolute;
     top: 50%;
     left: 50%;

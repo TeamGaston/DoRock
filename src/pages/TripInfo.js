@@ -61,7 +61,6 @@ const TripInfo = () => {
 
     const selectAreaButtonClick = () => {
         setPopupOn(!isPopupOn);
-        setSigunguCode(["11", "1"]);
     }
 
     return (
@@ -87,7 +86,7 @@ const TripInfo = () => {
                         <img src={loadingGif} alt="Loading..." />
                     )}
                 </article>
-                {isPopupOn ? <TripInfoPopup /> : null}
+                {isPopupOn ? <TripInfoPopup closePopup={setPopupOn} research={setSigunguCode} /> : null}
             </section>
         </section>
 
