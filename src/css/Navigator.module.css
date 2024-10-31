@@ -9,10 +9,12 @@
     width: 20%;
     height: 100%;
     text-align: center;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQy50mDfXXynHwnP8Wj4RFQWI3Pa0SEl1PCg&s");
+    background-image: url("../images/logo.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+
+    cursor: pointer;
 }
 
 .navBar {

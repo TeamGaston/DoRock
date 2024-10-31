@@ -1,12 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../css/Navigator.module.css";
 
 function Navigator() {
+    const navigate = useNavigate();
+
+    const goToHome = () => {
+        navigate("/");
+    }
+
     return (
         <>
         <div className={styles.navigator}>
-            <section className={styles.logoArea}></section>
+            <section className={styles.logoArea} onClick={e => goToHome()}></section>
             <nav className={styles.navBar}>
                 <ul className={styles.menuElement}>
                     <li><Link to="/" className={styles.linkStyle}>홈</Link> </li>
