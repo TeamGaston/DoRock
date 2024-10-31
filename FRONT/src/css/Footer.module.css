@@ -1,7 +1,7 @@
-.footerArea{
+.footerArea {
 
-    color: #fff;
-    padding:2rem;
+    color: #555555;
+    padding: 2rem;
     /* 이미지 있는거 */
     /* background-image: url("../images/footerImg.jpg");
     background-color: rgba(202, 202, 202, 0.5);
@@ -10,54 +10,53 @@
     background-blend-mode: lighten; */
 
     /* 이미지없는거  */
-    background-color: #b3b3b3   ;
+    background-color: #d5d5d5;
 
-    
 
-    text-shadow: 0.2rem 0.2rem   #333;
+
+    /* text-shadow: 0.2rem 0.2rem #333; */
+    /* text-shadow: 0 0 .5rem #333; */
 
     /* text-shadow: 
     0.2rem 0.2rem 0 black,  
-   -0.2rem -0.2rem 0 black, 
+    -0.2rem -0.2rem 0 black, 
     0.2rem -0.2rem 0 black,
-   -0.2rem 0.2rem 0 black;  */
-   
+    -0.2rem 0.2rem 0 black;  */
+
     font-weight: 900;
 }
 
-.footerSection{
-    display:flex;
+.footerSection {
+    display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.footerSection article{
-    display:flex;
+.footerSection article {
+    display: flex;
     flex-direction: column;
     justify-items: center;
 }
 
-.footerSection h4{
+.footerSection h4 {
     font-size: 3rem;
 }
-.footerSection p{
+
+.footerSection p {
     font-size: 2rem;
 }
 
-.footerSection i{
-    border:0.5rem solid white;
+.footerSection i {
+    border: 0.5rem solid white;
     border-radius: 1rem;
     box-sizing: border-box;
-    margin:1rem;
+    margin: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 }
 
-.footerSection i:hover{
-    cursor:pointer;
+.footerSection i:hover {
+    cursor: pointer;
 }
-
-
-
