@@ -4,19 +4,23 @@ import areaCode1 from "../data/areaCode1.json";
 
 const TripInfoPopup = (props) => {
     const { closePopup, research } = props;
-    const areaCode = areaCode1.response.body.items.item;
-
+    const areaCode = [{rnum: 0, code: "0", name: "강원도"} ,...areaCode1.response.body.items.item];
+    
     const [checkedItems, setCheckedItems] = useState([]); // 선택된 체크박스 ID 관리
     const [showWarning, setShowWarning] = useState(false); // 경고 메시지 상태
 
     const handleCheckboxChange = (e, code) => {
         if (e.target.checked) {
-            if (checkedItems.length >= 5) {
+            if (checkedItems.length >= 5 && code !== "0") { // 경고 메세지 ("5개만 입력~")
                 e.target.checked = false;
                 setShowWarning(true);
                 setTimeout(() => setShowWarning(false), 1000);
             } else {
-                setCheckedItems([...checkedItems, code]); // 선택 항목 추가
+                if (code === "0") {
+                    setCheckedItems([code]);
+                } else {
+                    setCheckedItems( checkedItems[0] === "0" ? [code] : [...checkedItems, code] );
+                }
             }
         } else {
             setCheckedItems(checkedItems.filter((item) => item !== code)); // 선택 항목 제거
@@ -26,7 +30,6 @@ const TripInfoPopup = (props) => {
     const handleButtonClick = () => {
         research(checkedItems); // 선택된 항목 전송
         closePopup(false);
-        console.log("선택된 항목들", checkedItems);
     };
 
     const resetButtonClick = () => {
