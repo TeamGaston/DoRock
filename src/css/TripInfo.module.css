@@ -1,6 +1,6 @@
 .tripInfoWrapper {
     width: 100vw;
-    height: calc(100% - 9rem);
+    height: calc(100% );
     background: #f9f9f9;
     padding: 2rem;
     box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.05);

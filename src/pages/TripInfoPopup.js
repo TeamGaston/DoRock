@@ -6,7 +6,7 @@ const TripInfoPopup = (props) => {
     const { closePopup, research } = props;
     const areaCode = [{rnum: 0, code: "0", name: "강원도"} ,...areaCode1.response.body.items.item];
     
-    const [checkedItems, setCheckedItems] = useState([]); // 선택된 체크박스 ID 관리
+    const [checkedItems, setCheckedItems] = useState(["0"]); // 선택된 체크박스 ID 관리
     const [showWarning, setShowWarning] = useState(false); // 경고 메시지 상태
 
     const handleCheckboxChange = (e, code) => {
