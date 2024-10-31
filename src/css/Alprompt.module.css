@@ -1,5 +1,4 @@
 .alpromptContainer {
-    position: relative;
     width: 100vw;
     height: calc(100vh - 9rem);
     display: flex;
@@ -9,15 +8,12 @@
         linear-gradient(to bottom, rgba(255, 255, 255, 0.81), rgba(255, 255, 255, 0.45)),
         url("../images/footerImg_2.jpg");
     background-size: cover;
-    z-index: -1;
 }
 
 .content {
-    position: relative;
     text-align: center;
     width: 70%;
     margin-top: 16rem;
-    z-index: 2;
 }
 
 .AITitle {
@@ -49,6 +45,11 @@
     box-shadow: 0px 3px 6px rgba(255, 143, 90, 0.3);
 }
 
+.tagBtn::before{
+    content: "#";
+    padding-right: 0.5rem;
+}
+
 .tagBtn {
     background-color: #fff2e7;
     border: 1px solid #fdd2b8;
@@ -59,10 +60,6 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
-}
-.tagBtn::before{
-    content: "#";
-    padding-right: 0.5rem;
 }
 
 .searchBar {
@@ -114,4 +111,15 @@ input[type="checkbox"] {
     box-shadow: 0px 3px 10px rgba(255, 143, 90, 0.3);
     transition: background-color 0.3s ease-in-out, transform 0.2s ease;
     margin-left: 2rem;
+}
+.searchBtn:hover{
+    background-color: #ff7e42;
+}
+
+.searchBtn:active{
+    transform: translateY(.15rem);
+    -webkit-transform: translateY(.15rem);
+    -moz-transform: translateY(.15rem);
+    -ms-transform: translateY(.15rem);
+    -o-transform: translateY(.15rem);
 }

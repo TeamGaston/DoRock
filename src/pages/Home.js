@@ -1,10 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../css/Home.module.css';
 import HomeMapClicker from "./Home_MapClicker";
 import HomeSigunguClicker from "./Home_SigunguClicker";
 import { useNavigate } from 'react-router-dom';
 // 이미지
 import slideImg_1 from '../images/home_slide_1.png';
+// import slideImg_2 from '../images/home_slide_2.png';
+// import slideImg_3 from '../images/home_slide_3.jpg';
+// import slideImg_4 from '../images/home_slide_4.jpg';
 // import slideImg_2 from '../images/home_slide_2.png';
 
 function Home() {
@@ -56,6 +59,9 @@ function MainContent() {
                 <article className={styles.slideimgWrap}>
                     <div className={styles.slideBox}>
                             <img src={slideImg_1} alt={`슬라이드 이미지1`} className={styles.slideImage} />
+                            {/* <img src={slideImg_2} alt={`슬라이드 이미지2`} className={styles.slideImage} />
+                            <img src={slideImg_3} alt={`슬라이드 이미지3`} className={styles.slideImage} />
+                            <img src={slideImg_4} alt={`슬라이드 이미지4`} className={styles.slideImage} /> */}
                     </div>
                 </article>
                 {/* <div className={styles.sliderContainer}>
