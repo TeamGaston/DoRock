@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../css/List.module.css";
+import styles from "../css/AIplanner.module.css";
 import loadingGif from "./loading.gif";
 import tripIcon from "./tripIcon.png";
 
@@ -34,7 +34,7 @@ const articlesJSX = articleList.filter((v, i, a) => {
         <img src={v.firstimage} alt={v.title} className={styles.locationImage} />
         <div className={styles.locationInfo}>
             <h3 className={styles.locationTitle}>{v.title}</h3>
-            <p className={styles.locationAddress}>📍 {v.addr1}</p>
+            <p className={styles.locationAddress}>{v.addr1}</p>
         </div>
     </article>)
 })
@@ -55,19 +55,30 @@ const AIplanner = () => {
             <main className={styles.main}>
                 <section className={styles.leftPanel}>
                     <article className={styles.gptChat}>
-                        <h2>GPT 대화창 표시</h2>
+                        <h2>GPT에게 보낸 메시지</h2>
                         <section className={styles.gptBody}>
                             <article className={styles.gptChatRight}>
-                                <p>❤️ : 대한민국 강원도 관광지 10개 추천해줘</p>
+                                <article className={styles.myChatArea}>
+                                    <div className={styles.myChatIcon}></div>
+                                    <div className={styles.myChatCont}>
+                                    <p className={styles.myChatTxt}>
+                                        대한민국 강원도 관광지 10개 추천해줘
+                                    </p>
+                                    </div>
+                                    <div className={styles.tailIcon}></div>
+                                </article>
                             </article>
-                            <article className={styles.gptChatLeft}>
+                            {/* <article className={styles.gptChatLeft}>
                                 <p>GPT : 네 10가지 관광지들을 추천해드릴게요</p>
-                            </article>
+                            </article> */}
 
                         </section>
-                        <input className={styles.gptInput} type="text" placeholder="대한민국 강원도 관광지 10개 추천해줘" />
+                        {/* <input className={styles.gptInput} type="text" placeholder="대한민국 강원도 관광지 10개 추천해줘" /> */}
                     </article>
                     <article className={styles.itinerary}>
+                        <article className={styles.titleBox}>
+                            <h2>추천 리스트</h2>
+                        </article>
                         <section className={styles.locationList}>
                             {articlesJSX}
                         </section>

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../css/Footer.module.css";
-import tripIcon from "./tripIcon.png"
+// import tripIcon from "./tripIcon.png"
 
 const Footer = () => {
     return (
@@ -18,15 +18,20 @@ const Footer = () => {
         <footer className={styles.footerArea}>
             <section className={styles.footerSection}>
                 <article>
-                    <h4>강원도-락도락</h4>
-                    <p>김유진 | 배주환 | 서동현 | TEAM_DOROCK</p>
+                    {/* <article> */}
+                        <p className={styles.copyrightTxt}>© 2024 team_Dyno &nbsp; Gangwon-do Travel Project</p>
+                        <p className={styles.footerTxt}>Gangwon-do RakdoRak | Collaborators: Yujin Kim | Juhwan Bae | Donghyun Seo</p>
+                        <p className={styles.footerTxt}>All rights reserved.</p>
+                    {/* </article> */}
                 </article>
-                <article>
+                <div className={styles.footerLogo}></div>
+
+                {/* <article>
                     <h4>Contact</h4>
                     <p>Email: dorock@gmail.com</p>
                     <p>Phone: +123 456 7890</p>
-                </article>
-                <article>
+                </article> */}
+                {/* <article>
                     <h4>Follow us</h4>
                     <div>
                     <i className="xi-facebook xi-4x"></i>
@@ -34,7 +39,7 @@ const Footer = () => {
                     <i className="xi-kakaotalk xi-4x"></i>
                     <i className="xi-naver-square xi-4x"></i>
                     </div>
-                </article>
+                </article> */}
             </section>
         </footer>
     )

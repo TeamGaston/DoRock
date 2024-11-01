@@ -17,25 +17,17 @@
     justify-content: space-between;
     width: 100%;
     padding: 0 3rem;
-    /* border: 1px solid red; */
 }
 
-
-.weatherTitle,
-.weather {
+.weatherTitle, .weather,
+.timeTitle, .time {
     font-size: 2.1rem;
     border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
 }
 
-.timeTitle,
-.time {
+.timeTitle, .time {
     font-size: 2.7rem;
     font-weight: 550;
-    text-align: left;
 }
 
 /* 메인 콘텐츠 영역 */
@@ -45,8 +37,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    /* padding: 2rem; */
-    /* border: 1px solid red; */
     margin-top: -3.5rem;
 }
 
@@ -57,31 +47,61 @@
 }
 
 .slideimgWrap {
-    width: 100%;
+    position: relative;
+    width: 89rem;
+    height: 55rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
     overflow: hidden;
-}
-
-.slideBox {
-    width: 100%;
-    height: 100%;
-    background-color: #e6f7ff;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.5rem;
-    color: #555;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
 
-.slideBox>img {
-    display: block;
+}
+/* .slideimgWrap img {
+    position: absolute;
+    border-radius: 1rem;
+    left: 0;
+    top: 0;
+    display: inline-block;
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
-    transition: opacity 1s ease-in-out;
-    /* 서서히 변환 효과 */
+    object-fit: cover;
+    transition: opacity 3s ease-in-out;
+    -webkit-transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -ms-transition: opacity 3s ease-in-out;
+    -o-transition: opacity 3s ease-in-out;
+} */
+
+/* 이미지 기본 스타일 */
+.slideImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
 }
+
+/* 페이드 인 효과 */
+.fadeIn {
+    opacity: 1;
+}
+
+/* 페이드 아웃 효과 */
+.fadeOut {
+    opacity: 0.35;
+}
+
+/* 숨겨진 이미지 */
+.hidden {
+    display: none;
+}
+
 
 .slideBox img.active {
     opacity: 1;
@@ -104,7 +124,6 @@
 }
 
 .promptBox:hover {
-    /* transform: translateY(-0.3rem); */
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 20px rgba(255, 255, 255, 0.6);
 }
 
@@ -120,9 +139,8 @@
     width: 90%;
     padding: 1.35rem;
     border-radius: 1.5rem;
-    border: 0.1rem solid #00aaff;
+    border: 1px solid #00aaff;
     font-size: 2rem;
-    outline: none;
     background: #ffffff;
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.6);
     transition: all 0.3s ease;
@@ -135,7 +153,7 @@
     box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.15), inset -2px -2px 8px rgba(255, 255, 255, 0.8);
 }
 
-.aiInput::placeholder{
+.aiInput::placeholder {
     font-size: 1.8rem;
 }
 
@@ -158,37 +176,48 @@
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.5);
 }
 
-/* .submitBtn:active {
-    transform: scale(0.98);
-} */
-
 /* 좌우 화살표 버튼 스타일 */
-.prevButton,
-.nextButton,
-.stopButton {
-    margin-top: 1rem;
+.prevButton, .nextButton, .stopButton {
     padding: 1rem;
     color: #333;
     font-size: 2rem;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
     background: transparent;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.prevButton:hover,
-.nextButton:hover,
-.stopButton:hover {
+.prevButton:hover, .nextButton:hover, .stopButton:hover {
     font-weight: bold;
     box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+}
+/* =====날씨 ===== */
 
+.weatherBox > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    margin-left: -2.5rem;
+}
+.weatherTitle {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #333;
+    /* margin-bottom: 0.3rem; */
+    /* border: 1px solid red; */
+    text-align: center;
 }
 
-.xi-pause {
-    font-size: 3rem;
+.temperature {
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.weatherIcon {
+    width: 5.5rem;
+    height: 5.5rem;
+    display: inline-block;
+    width: 100%;
 }

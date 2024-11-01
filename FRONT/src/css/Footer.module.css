@@ -1,7 +1,6 @@
 .footerArea {
-
-    color: #555555;
-    padding: 2rem;
+    color: #EEF2F6;
+    padding: 1.5rem;
     /* 이미지 있는거 */
     /* background-image: url("../images/footerImg.jpg");
     background-color: rgba(202, 202, 202, 0.5);
@@ -11,42 +10,48 @@
 
     /* 이미지없는거  */
     background-color: #e0e0e0;
-
-
-
     /* text-shadow: 0.2rem 0.2rem #333; */
     /* text-shadow: 0 0 .5rem #333; */
-
     /* text-shadow: 
     0.2rem 0.2rem 0 black,  
     -0.2rem -0.2rem 0 black, 
     0.2rem -0.2rem 0 black,
     -0.2rem 0.2rem 0 black;  */
-
-    font-weight: 900;
+    font-weight: 600;
 }
 
 .footerSection {
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .footerSection article {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-items: center;
+    /* border: 1px solid red; */
+    text-align: center;
 }
 
-.footerSection h4 {
+/* .footerSection h4 {
     font-size: 3rem;
-}
-
+} */
 .footerSection p {
-    font-size: 2rem;
+    margin: .3rem;
+}
+.footerSection .footerTxt {
+    font-size: 1.35rem;
+    color: #757575;
 }
 
-.footerSection i {
+.copyrightTxt{
+    font-size: 1.5rem;
+    color: #535353;
+}
+ .footerSection i {
     border: 0.5rem solid white;
     border-radius: 1rem;
     box-sizing: border-box;
@@ -55,8 +60,21 @@
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
-}
+} 
 
 .footerSection i:hover {
     cursor: pointer;
+}
+
+.footerLogo{
+    position: absolute;
+    right: 0%;
+    top: 34%;
+    width: 15.5rem;
+    height: 6rem;
+    /* border: 1px solid red; */
+    background: url("../images/footer_logo.png") no-repeat;
+    background-size: contain;
+    background-position: 60% 50%;
+    /* border: 1px solid red; */
 }
